@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="title">여기를 보세요!</h1>
+    <button id="changeBtn">색상 변경 마법</button>
+
+    <script>
+        const myTitle = document.getElementById('title');
+        const myBtn = document.getElementById('changeBtn');
+
+        myBtn.addEventListener('click', function () {
+            myTitle.style.color = 'blue';
+            myTitle.style.backgroundColor = 'yellow';
+            alert('색상이 변경되었습니다!');
+        });
+    </script>
+    
+</body>
+
+</html>
