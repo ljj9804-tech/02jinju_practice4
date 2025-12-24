@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button id="mode" onclick="doOnDark()">다크 모드 켜기</button>
-    
+
     <script>
 
         let isDark = false;
-
+        const btn = document.getElementById("mode");
         function doOnDark() {
-            if(isDark) {
+            if (isDark) {
                 alert("라이트모드로 활성화됩니다.");
-                
+
             } else {
                 alert("다크모드로 활성화됩니다.")
             }
@@ -29,11 +31,12 @@
 
 
 
-        const btn = document.getElementById("mode");
+
 
 
 
 
     </script>
 </body>
+
 </html>
