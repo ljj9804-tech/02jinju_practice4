@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>김꼬질</h2>
+    <div id="dogLIst" style="display: flex;">
+        <!-- <div style="width: 230px;">
+            <img src="picture1.jpg" alt="강아지 사진" width="230px">
+            <p style="text-align: center;">강아지</p>
+        </div> -->
+    </div>
+
+    <script>
+        const dogs = [
+            { name: "dog1", img: "picture1.jpg" },
+            { name: "dog2", img: "picture2.jpg" },
+            { name: "dog3", img: "picture3.jpg" }
+        ];
+
+        const dogLIst = document.getElementById("dogLIst");
+
+
+        render();
+
+        function render() {
+            dogs.forEach(function (item) {
+                // alert("1");
+                dogLIst.innerHTML += `
+                <div style="width: 230px; margin: 10px">
+                    <img src=${item.img} alt="강아지 사진" width="230px" style="border-radius: 50px;">
+                    <p style="text-align: center;">${item.name}</p>
+                </div>
+                
+
+
+                `;
+            });
+        }
+
+
+    </script>
+
+</body>
+
+</html>

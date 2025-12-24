@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="itemInput" placeholder="사고 싶은 물건">
+    <button id="addBtn">담기</button>
+    <h3 id="myList">장바구니 : </h3>
+    <script>
+        // 순서1 배열을 생성
+        let cart = [];
+
+        const input = document.getElementById('itemInput');
+        const btn = document.getElementById('addBtn');
+        const list = document.getElementById('myList');
+
+        btn.addEventListener('click', function () {
+            const item = input.value;
+            if (item !== "") {
+                if (cart.includes(item)) {
+                    alert("이미 장바구니에 있습니다.");
+                } else {
+                    cart.push(item);
+                    alert("현재 장바구니: " + cart);
+                    list.innerText = "장바구니 : " + cart;
+                    input.value = "";
+                }
+            }});
+    </script>
+</body>
+
+</html>

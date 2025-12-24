@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>강아지 사진첩</h2>
+    <div id="dog-list" style="display: flex;">
+        <!-- <div>
+            <h6 style=" font-size: 30px; margin: 5px;">강아지1</h6>
+            <img src="picture1.jpg" width="230px">
+        </div> -->
+
+    </div>
+
+    <script>
+        const places = [
+            { dog: "강아지1", img: "picture1.jpg" },
+            { dog: "강아지2", img: "picture2.jpg" },
+            { dog: "강아지3", img: "picture3.jpg" }
+        ];
+
+        const dogContainer = document.getElementById('dog-list');
+
+        render();
+
+        function render() {
+            places.forEach (function (place) {
+                // alert("1");
+                dogContainer.innerHTML +=`
+                <div>
+                    <h6 style=" font-size: 30px; margin: 5px;">${place.dog}</h6>
+                    <img src="${place.img}" width="230px">
+                </div>
+                `;
+                // alert("11");
+            });
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 3번</title>
+</head>
+
+<body>
+    <!-- 실습 3번 -->
+    <h1>실습 3번</h1>
+    <div id="postBox"></div>
+    <button id="likeBtn">좋아요 누르기</button>
+
+
+    <script>
+        // 실습 3번 
+        let post = {
+            title: "오늘의 일기",
+            likes: 0
+        };
+        const postBox = document.getElementById("postBox");
+        const likeBtn = document.getElementById("likeBtn");
+
+        function render() {
+            
+            postBox.innerHTML = `
+                <h3>제목 : ${post.title}</h3>
+                <p>좋아요 : ${post.likes}개</p>
+            `;
+        }
+        //처음 실행 시 화면 그리기
+        render();
+
+        likeBtn.addEventListener('click', function () {
+            
+            post.likes++;
+            render();
+        });
+    </script>
+
+</body>
+
+</html>

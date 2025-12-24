@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요.">
+    <button id="greetBtn">입력 완료</button>
+    <h2 id="resultText"></h2>
+
+    <script>
+        const myInput = document.getElementById("nameInput");
+        const myBut = document.getElementById("greetBtn");
+        const myresultText = document.getElementById("resultText");
+
+
+        myBut.addEventListener('click', function () {
+            let Name = myInput.value;
+            if (Name === "") {
+                alert("이름을 입력하세요.");
+            } else {
+                myresultText.innerText = "반갑습니다, [" + Name + "]님!";
+                myresultText.style.color = "blue";
+                myInput.value = "";
+
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
