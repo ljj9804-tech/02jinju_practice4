@@ -48,7 +48,13 @@ function deleteData(id) {
 
 
 function updateData(id) {
+    const item = todoData.find(data => data.id === id);
+    const newText = prompt("수정사항을 입력해주세요.", item.text);
     
+    if (newText !== null && newText !== "") {
+        item.text = newText;
+    }   
+    render(todoData);
 }
 
 //업데이트(수정) 이어서 진행하기
