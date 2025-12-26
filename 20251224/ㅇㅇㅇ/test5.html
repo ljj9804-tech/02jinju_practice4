@@ -8,23 +8,24 @@
 </head>
 
 <body>
-    <button id="mode" onclick="doOnDark()">다크 모드 켜기</button>
+    <button id="mode">다크 모드 켜기</button>
 
     <script>
 
         let isDark = false;
+
         const btn = document.getElementById("mode");
-        function doOnDark() {
-            if (isDark) {
+        btn.addEventListener('click', function () {
+            if (isDark === false) {
                 alert("라이트모드로 활성화됩니다.");
-
+                btn.innerText = "라이트 모드 켜기";
+                isDark = !isDark;
             } else {
-                alert("다크모드로 활성화됩니다.")
+                alert("다크모드로 활성화됩니다.");
+                btn.innerText = "다크 모드 켜기";
+                isDark = !isDark;
             }
-
-            isDark = !isDark;
-
-        }
+        });
 
 
 
