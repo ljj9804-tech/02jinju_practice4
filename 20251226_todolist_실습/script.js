@@ -1,65 +1,61 @@
-const searchBox = document.getElementById("searchBox");
-const input = document.getElementById("taskInput");
-const addBtn = document.getElementById("addBtn");
-const list = document.getElementById("taskList");
+const searchInPut = document.getElementById("searchBox"); //데이터 검색
+const textInPut = document.getElementById("taskInput"); //할일 추가 텍스트
+const addBtn = document.getElementById("addBtn"); //추가하기 버튼
+const myList = document.getElementById("taskList"); //현 상황 그리는 리스트
 
 let todoData = [];
 
 render(todoData);
 
+
+
 function render(dataArray) {
-    list.innerHTML = "";
+    myList.innerHTML = "";
     dataArray.forEach(function (data) {
-        list.innerHTML += `
-    <li>
-        <span>${data.text}</span>
-        <div>
-            <button onclick="updateData(${data.id})">수정</button>
-            <button onclick="deleteData(${data.id})">삭제</button>
-        </div>
-    </li>
+        myList.innerHTML += `
+        <li>
+            <span>${data.text}</span >
+            <div>
+                <button onclick="updateData(${data.id})">수정</button>
+                <button onclick="deleteData(${data.id})" > 삭제</button >
+            </div >
+        </li >
         `;
     });
 }
 
-//render
-
 addBtn.addEventListener('click', addData);
 function addData() {
-    if (input.value === "") {
+    if (textInPut.value === "") {
         alert("내용을 입력해주세요.");
         return;
-    } const newTodo = {
-        id: Date.now(),
-        text: input.value
     }
-    todoData.push(newTodo);
+    const nowTodo = {
+        id: Date.now(),
+        text: textInPut.value
+    }
+    todoData.push(nowTodo);
     render(todoData);
-    input.value = "";
-    console.log(newTodo.id);
+    textInPut = "";
 }
-
-
-function deleteData(id) {
-    if (confirm("정말 삭제하시겠습니까?")) {
-    todoData = todoData.filter(data => data.id !== id);
-    render(todoData);
-}};
-
 
 function updateData(id) {
     const item = todoData.find(data => data.id === id);
-    const newText = prompt("수정사항을 입력해주세요.", item.text);
-    
+    const newText = prompt("수정할 내용을 입력하세요.",item.text);
+
     if (newText !== null && newText !== "") {
         item.text = newText;
-    }   
+    }
     render(todoData);
 }
 
-//업데이트(수정) 이어서 진행하기
+function deleteData(id) {
+    if (confirm("정말로 삭제할까요?")) {
+        todoData = todoData.filter(data => data.id !== id);
+        render(todoData);
+    }
+}
+
+
 
 alert("1");
-
-
-
